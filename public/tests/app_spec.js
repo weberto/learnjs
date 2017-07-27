@@ -52,8 +52,13 @@ describe('LearnJS', function() {
   describe('answer section', function() {
     let problemNumber = 1;
     let view = learnjs.problemView(problemNumber);
+    console.log(`PROBLEM VIEW: ${JSON.stringify(view)}`);
     it('can check a correct answer by hitting a button', function() {
-      view.find('.answer').val('true'); view.find('.check-btn').click(); expect(view.find('.result').text()).toEqual('Correct!');
+      view.find('.answer').val('true');
+      view.find('.check-btn').click();
+      console.log(`ANSWER: ${view.find('.result').html()}`);
+      expect(view.find('.result .correct-flash span').text()).toEqual('Correct!');
+      // expect(view.find('.result').text()).toEqual('Correct!');
     });
     it('rejects an incorrect answer', function() { view.find('.answer').val('false'); view.find('.check-btn').click(); expect(view.find('.result').text()).toEqual('Incorrect!');
       });

@@ -22,17 +22,8 @@
   <body>
     <div class='markup'>
       <div class='view-container container'>
-        <div class='landing-view'>
-          <div class='one-half column'>
-            <h3>Learn JavaScript, one puzzle at a time.</h3>
-            <a href='#problem-1' class='button button-primary'>Start now!</a>
-          </div>
-          <div class='one-half column'>
-            <img src='/images/HeroImage.jpg'>
-          </div>
-        </div>
       </div>
-      <div class='templates'>
+      <div class='templates' style='display: none;'>
         <div class='problem-view'>
           <h4 class='title'></h4>
           <p data-name='description'></p>
@@ -42,6 +33,19 @@
             <button class='button-primary check-btn'>Check Answer</button>
             <p class='result'></p> </div>
           </form>
+        </div>
+        <div class='correct-flash'>
+          <span>Correct!</span>
+          <a>Next Problem</a>
+        </div>
+        <div class='landing-view'>
+          <div class='one-half column'>
+            <h3>Learn JavaScript, one puzzle at a time.</h3>
+            <a href='#problem-1' class='button button-primary'>Start now!</a>
+          </div>
+          <div class='one-half column'>
+            <img src='/images/HeroImage.jpg'>
+          </div>
         </div>
       </div>
     </div>
