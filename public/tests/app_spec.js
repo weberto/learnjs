@@ -19,8 +19,20 @@ describe('LearnJS', function() {
     it('has a title that includes the problem number', function() {
       let problemNumber = 42;
       let view = learnjs.problemView(problemNumber);
-      let title = 'Problem #' + problemNumber + ' Coming soon!';
-      expect(view.text()).toEqual(title);
+      let title_val = view.find('.title');
+      let title = 'Problem #' + problemNumber;
+      _.each([1,2,3], function(num) {
+        console.log(`NUMBER: ${num}`);
+      })
+       // console.log(view);
+       console.log(title_val);
+      // console.log(`TITLE test: ${title}`);
+      // console.log(`VIEW.text: ${view.text()}`)
+      // console.log(`TITLE test length: ${title.length}`);
+      // console.log(`VIEW.text length: ${view.text('.title').length}`)
+      // let title = 'Problem #' + problemNumber + ' Coming soon!';
+      expect(title_val.text()).toEqual(title);
+      // expect(view.text()).toEqual(title);
       // expect(view.text()).toEqual('Problem #1 Coming soon!');
     })
   })
@@ -36,4 +48,14 @@ describe('LearnJS', function() {
     $(window).trigger('hashchange');
     expect(learnjs.showView).toHaveBeenCalledWith(window.location.hash);
   })
+
+  describe('answer section', function() {
+    let problemNumber = 1;
+    let view = learnjs.problemView(problemNumber);
+    it('can check a correct answer by hitting a button', function() {
+      view.find('.answer').val('true'); view.find('.check-btn').click(); expect(view.find('.result').text()).toEqual('Correct!');
+    });
+    it('rejects an incorrect answer', function() { view.find('.answer').val('false'); view.find('.check-btn').click(); expect(view.find('.result').text()).toEqual('Incorrect!');
+      });
+  });
 })
