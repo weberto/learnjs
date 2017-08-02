@@ -13,8 +13,8 @@ export default class Menu extends Component {
         {/**
         <Link to="/menus"><span style={{"marginRight": "10px"}} className="glyphicon glyphicon-menu-hamburger" onClick={this.handleClick}></span></Link>
         */}
-        <img id="NYTLogo" alt="New York Times" src="https://static01.nyt.com/images/misc/nytlogo152x23.gif" style={{"display": "inline"}} height="23" width="152" />
-        <Link to="/settings" style={{"display": "inline"}} className="btn"><span className="glyphicon glyphicon-cog"></span></Link>
+        <img style={{"margin": "0 40px 0 40px"}} id="NYTLogo" alt="New York Times" src="https://static01.nyt.com/images/misc/nytlogo152x23.gif" height="23" width="152" />
+        <Link to="/settings" className="btn"><span className="glyphicon glyphicon-cog"></span></Link>
         {/**
         <ul>
         <li><Link to="/schedule" className="btn">Schedule</Link></li>
