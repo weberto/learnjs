@@ -67,3 +67,5 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {fetchContacts})(FetchContacts);
 // export default connect()(FetchContacts);
+
+

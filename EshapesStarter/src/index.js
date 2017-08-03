@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import FetchContacts from './components/fetch_contacts';
@@ -11,16 +11,12 @@ import Menus from './components/menu2';
 import Settings from './components/settings';
 import Schedule from './components/schedule';
 import promise from 'redux-promise';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import App from './components/app';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-
-let eshapes = {
-
-}
 
 class Availability extends React.Component {
   render() {
@@ -54,12 +50,15 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Menu></Menu>
-        <Route path="/home" component={Home} />
-        <Route path="/schedule" component={Schedule} />
-        <Route path="/availability" component={Availability} />
-        <Route path="/contacts" component={FetchContacts} />
-        <Route path="/settings" component={Settings} />
-        <Route path="/menus" component={Menus} />
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/schedule" component={Schedule} />
+          <Route path="/availability" component={Availability} />
+          <Route path="/contacts" component={FetchContacts} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/menus" component={Menus} />
+          <Route path="/" component={Home} />
+        </Switch>
         <Footer></Footer>
       </div>
     </BrowserRouter>

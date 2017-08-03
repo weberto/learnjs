@@ -2,31 +2,77 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form'
 
-let Settings = props => {
-  const {handleSubmit, pristine, reset, submitting} = props
+            // {touched && (error && <span>{error}</span>)}
+// let Settings = props => {
+
+function validate(values) {
+  const errors = {};
+  console.log(`Validate: ${JSON.stringify(values)}`);
+
+  if (! values.firstName) {
+    errors.firstName = "Not blank";
+  }
+
+  if (! values.email || values.email.match(/@/)) {
+    errors.email = "Not blank and contains a valid email address";
+  }
+  console.log(`Errors: ${JSON.stringify(errors)}`);
+
+  return errors;
+}
+
+
+
+class Settings extends Component {
+  onSubmit(values) {
+    console.log(`SUBMIT: ${JSON.stringify(values)}`);
+    return (
+      <Link style={{"marginBottom": "30px"}} to="/home" className="btn"><span className="btn btn-primary">Submit</span></Link>
+    );
+  }
+  renderSome(field) {
+    const { meta: { touched, error } } = field;
+    return (
+      <div className="form-group">
+        <label>{field.label}</label>
+        <input
+          className="form-control"
+          type="text"
+          {...field.input}
+        />
+        <div className="has-error text-help">
+          {touched ? error : ''}
+        </div>
+      </div>
+    )
+  }
+  render() {
+            // {field.meta.touched && (errors && <span>Error</span>)}
+  const {handleSubmit, pristine, reset, submitting, touched} = this.props;
   return (
     <div className="well">
       <h3 className="text-center">Settings</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className="form-group">
-          <label>First Name</label>
           <div>
             <Field
               name="firstName"
-              component="input"
+              label="First Name"
+              component={this.renderSome}
               type="text"
               className="form-control"
               placeholder="First Name"
             />
+            {touched ? error : ''}
           </div>
         </div>
 
         <div className="form-group">
-          <label>Last Name</label>
           <div>
             <Field
               name="lastName"
-              component="input"
+              label="Last Name"
+              component={this.renderSome}
               type="text"
               className="form-control"
               placeholder="Last Name"
@@ -35,11 +81,11 @@ let Settings = props => {
         </div>
 
         <div className="form-group">
-          <label>Email</label>
           <div>
             <Field
+              label="Email"
               name="email"
-              component="input"
+              component={this.renderSome}
               type="email"
               className="form-control"
               placeholder="Email"
@@ -60,12 +106,12 @@ let Settings = props => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="employed">Employed</label>
           <div>
             <Field
               name="employed"
+              label="Employed"
               id="employed"
-              component="input"
+              component={this.renderSome}
               className="form-control"
               type="checkbox"
             />
@@ -79,22 +125,32 @@ let Settings = props => {
           </div>
         </div>
         <div>
-          <Link style={{"marginBottom": "30px"}} to="/home" className="btn"><span className="btn btn-primary">Submit</span></Link>
+          {// <Link style={{"marginBottom": "30px"}} to="/home" className="btn"><span className="btn btn-primary">Submit</span></Link> }
+          }
 
-          {/*
-          <button type="submit" disabled={pristine || submitting}>Submit</button>
-          <button type="button" disabled={pristine || submitting} onClick={reset}>
+          <button className="btn btn-primary" type="submit" disabled={pristine || submitting}>Submit</button>
+          <button className="btn btn-default" type="button" disabled={pristine || submitting} onClick={reset}>
             Clear Values
           </button>
-          */}
         </div>
       </form>
     </div>
   )
+} // end of render
 }
 
+
+function asyncValidate(values) {
+  return new Promise(function(resolve, reject) {
+    resolve();
+  });
+}
+
+  // asyncBlurFields: [],
 Settings = reduxForm({
   // a unique name for the form
+  validate,
+  asyncBlurFields: [],
   form: 'settings'
 })(Settings)
 
@@ -109,4 +165,8 @@ class Settings2 extends Component {
   }
 }
 
-export default Settings;
+
+export default reduxForm({
+  form: "SettingsForm"
+})(Settings);
+// export default Settings;
