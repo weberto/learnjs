@@ -11,7 +11,8 @@ class Footer extends Component {
     return (
       <div className="container" style={{position: "fixed", bottom: 0, background: "#eeffee"}}>
         <p className="">
-          FOOTER: This is a common footer for eshapes - authority_level, still learning - <strong><em>{this.props.eshapes.authority_level}</em></strong>
+          FOOTER: EShapes - authority_level: <strong><em>{this.props.eshapes.authority_level}</em></strong>. login
+          status: <strong><em>{this.props.eshapes.login}</em></strong>
         </p>
       </div>
     );
