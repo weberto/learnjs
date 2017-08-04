@@ -8,11 +8,12 @@ class Footer extends Component {
     this.props.setEshapes();
   }
   render() {
+    console.log(`Eshapse: ${JSON.stringify(this.props.eshapes)}`);
     return (
       <div className="container" style={{position: "fixed", bottom: 0, background: "#eeffee"}}>
         <p className="">
           FOOTER: EShapes - authority_level: <strong><em>{this.props.eshapes.authority_level}</em></strong>. login
-          status: <strong><em>{this.props.eshapes.login}</em></strong>
+          status: <strong><em>{JSON.stringify(this.props.eshapes.login)}</em></strong>
         </p>
       </div>
     );

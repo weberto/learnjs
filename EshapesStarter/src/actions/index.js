@@ -14,11 +14,12 @@ export function fetchContacts() {
 
 export function setEshapes() {
   const eshapes = {
-    "authority_level": "employee"
+    "authority_level": "employee",
+    "login": true
   }
 
   return {
     type: SET_ESHAPES,
-    payload: eshapes 
+    payload: eshapes
   }
 }

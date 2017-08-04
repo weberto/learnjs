@@ -10,16 +10,16 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default class MenuAdmin extends Component {
   render() {
     return (
-      <div className="well fadein">
-        <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={700} transitionLeaveTimeout={700} transitionAppear={true} transitionAppearTimeout={500}>
+      <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={700} transitionLeaveTimeout={700} transitionAppear={true} transitionAppearTimeout={3700} >
+        <div className="well menu">
           <h3 className="text-center" key="12345">Admin Menus</h3>
           <ul className="list-group" key="12346">
             <MenuCommon></MenuCommon>
             <li className="list-group-item"><Link to="/transactionlog" className="btn">Transaction Log</Link></li>
             <li className="list-group-item"><Link to="/tools" className="btn">Tools</Link></li>
           </ul>
-        </ReactCSSTransitionGroup>
-      </div>
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

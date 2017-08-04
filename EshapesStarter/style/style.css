@@ -1,0 +1,36 @@
+body {
+  background-color: #ccccec
+}
+.glyphyicon {
+  margin: 0 10px 0 10px;
+}
+
+.well .menu {
+  height: 100%;
+}
+
+.menu {
+  width: 75%;
+  height: 100%;
+  margin-left: -10px;
+}
+
+.example-appear {
+  opacity: 0.20;
+  margin-left: -700px;
+  /** margin-top: -700px; */
+  -webkit-opacity: 0.33;
+}
+
+.example-appear.example-appear-active {
+  -webkit-opacity: 1;
+  opacity: 1;
+  margin-left: -10px;
+  /**
+  margin-top: 0;
+  -webkit-transition: opacity 5.5s ease, margin-left 1.5s ease, margin-top 1.5s ease;
+  transition: opacity 5.5s ease, margin-left 1.5s ease, margin-top 1.5s ease;
+  */
+  -webkit-transition: opacity 5.5s ease, margin-left 1.5s ease;
+  transition: opacity 5.5s ease, margin-left 1.5s ease;
+}

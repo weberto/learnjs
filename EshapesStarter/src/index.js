@@ -6,8 +6,25 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import FetchContacts from './components/fetch_contacts';
-import Menu from './components/react-menu';
-import Menus from './components/menu2';
+import Navbar from './components/navbar';
+
+import Setup from './components/common/setup';
+import Home from './components/common/home';
+import Login from './components/common/login';
+import Logout from './components/common/logout';
+
+import MenuManagement from './components/mailroom_management/menu_management';
+import Scheduler from './components/mailroom_management/scheduler';
+import ActivityLog from './components/mailroom_management/activitylog';
+import AnnouncementEdit from './components/mailroom_management/announcementedit';
+
+import MenuEmployee from './components/employee/menu_employee';
+
+import MenuAdmin from './components/admin/menu_admin';
+import TransactionLog from './components/admin/transactionlog';
+import Tools from './components/admin/tools';
+
+import Messages from './components/employee/messages';
 import Settings from './components/settings';
 import Schedule from './components/schedule';
 import promise from 'redux-promise';
@@ -31,6 +48,7 @@ class Availability extends React.Component {
     );
   }
 }
+/**
 class Home extends React.Component {
   render() {return (
       <div className="jumbotron">
@@ -39,6 +57,7 @@ class Home extends React.Component {
     )
   }
 }
+*/
 /**
 class Settings extends React.Component {
   render() {return <div>Settings</div>}
@@ -49,14 +68,22 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
-        <Menu></Menu>
+        <Navbar></Navbar>
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/availability" component={Availability} />
           <Route path="/contacts" component={FetchContacts} />
           <Route path="/settings" component={Settings} />
-          <Route path="/menus" component={Menus} />
+          <Route path="/setup" component={Setup} />
+          <Route path="/login" component={Login} />
+          <Route path="/logout" component={Logout} />
+          <Route path="/menu_management" component={MenuManagement} />
+          <Route path="/menu_employee" component={MenuEmployee} />
+          <Route path="/menu_admin" component={MenuAdmin} />
+          <Route path="/messages" component={Messages} />
+          <Route path="/transactionlog" component={TransactionLog} />
+          <Route path="/tools" component={Tools} />
           <Route path="/" component={Home} />
         </Switch>
         <Footer></Footer>
