@@ -4,7 +4,7 @@ import MenuCommon from '../common/menu_common';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
-export default class Menus extends Component {
+export default class MenuManagement extends Component {
   render() {
     return (
       <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={700} transitionLeaveTimeout={700} transitionAppear={true} transitionAppearTimeout={3700} >

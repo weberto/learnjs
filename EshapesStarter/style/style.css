@@ -5,6 +5,10 @@ body {
   margin: 0 10px 0 10px;
 }
 
+.well {
+  min-height: 100%;
+}
+
 .well .menu {
   height: 100%;
 }
@@ -33,4 +37,17 @@ body {
   */
   -webkit-transition: opacity 1.5s ease, margin-left 1.5s ease;
   transition: opacity 1.5s ease, margin-left 1.5s ease;
+}
+
+
+.fadein-appear {
+  opacity: 0.1;
+  -webkit-opacity: 0.1;
+}
+
+.fadein-appear.fadein-appear-active {
+  -webkit-opacity: 1;
+  opacity: 1;
+  -webkit-transition: opacity 2.5s ease;
+  transition: opacity 2.5s ease;
 }

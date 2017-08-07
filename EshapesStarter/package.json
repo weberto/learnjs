@@ -6,7 +6,7 @@
   "repositoryold": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "repository": "git@github.com:webertol/learnjs.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host=10.54.59.99",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host=10.54.59.57",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -30,6 +30,7 @@
     "axios": "^0.16.2",
     "babel-loader": "^7.1.1",
     "babel-preset-stage-1": "^6.1.18",
+    "express": "^4.15.4",
     "jquery": "^2.2.4",
     "lodash": "^4.17.4",
     "mocha": "^3.5.0",

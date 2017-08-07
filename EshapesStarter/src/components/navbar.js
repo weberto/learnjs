@@ -16,7 +16,7 @@ export default class Menu extends Component {
         <Link to="/menus"><span style={{"marginRight": "10px"}} className="glyphicon glyphicon-menu-hamburger" onClick={this.handleClick}></span></Link>
         */}
         <img style={{"margin": "0 30px 0 30px"}} id="NYTLogo" alt="New York Times" src="https://static01.nyt.com/images/misc/nytlogo152x23.gif" height="23" width="152" />
-        <Link to="/settings" className="btn"><span className="glyphicon glyphicon-cog"></span></Link>
+        <Link to="/setup" className="btn"><span className="glyphicon glyphicon-cog"></span></Link>
         {/**
         <ul>
         <li><Link to="/schedule" className="btn">Schedule</Link></li>

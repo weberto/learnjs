@@ -5,7 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
-import FetchContacts from './components/fetch_contacts';
+import FetchContacts from './components/admin/fetch_contacts';
+// import FetchContacts from './components/fetch_contacts';
 import Navbar from './components/navbar';
 
 import Setup from './components/common/setup';
@@ -19,22 +20,25 @@ import ActivityLog from './components/mailroom_management/activitylog';
 import AnnouncementEdit from './components/mailroom_management/announcementedit';
 
 import MenuEmployee from './components/employee/menu_employee';
+import Availability from './components/employee/availability';
+import Schedule from './components/employee/schedule';
 
 import MenuAdmin from './components/admin/menu_admin';
 import TransactionLog from './components/admin/transactionlog';
 import Tools from './components/admin/tools';
 
 import Messages from './components/employee/messages';
-import Settings from './components/settings';
-import Schedule from './components/schedule';
 import promise from 'redux-promise';
 // import { Link } from 'react-router-dom';
 
 import App from './components/app';
 import reducers from './reducers';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
+/**
 class Availability extends React.Component {
   render() {
     return (
@@ -48,6 +52,7 @@ class Availability extends React.Component {
     );
   }
 }
+*/
 /**
 class Home extends React.Component {
   render() {return (
@@ -70,21 +75,23 @@ ReactDOM.render(
       <div>
         <Navbar></Navbar>
         <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/schedule" component={Schedule} />
-          <Route path="/availability" component={Availability} />
-          <Route path="/contacts" component={FetchContacts} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/setup" component={Setup} />
-          <Route path="/login" component={Login} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/menu_management" component={MenuManagement} />
-          <Route path="/menu_employee" component={MenuEmployee} />
-          <Route path="/menu_admin" component={MenuAdmin} />
-          <Route path="/messages" component={Messages} />
-          <Route path="/transactionlog" component={TransactionLog} />
-          <Route path="/tools" component={Tools} />
-          <Route path="/" component={Home} />
+            <Route path="/home" component={Home} />
+            <Route path="/schedule" component={Schedule} />
+            <Route path="/scheduler" component={Scheduler} />
+            <Route path="/activitylog" component={ActivityLog} />
+            <Route path="/announcementedit" component={AnnouncementEdit} />
+            <Route path="/availability" component={Availability} />
+            <Route path="/contacts" component={FetchContacts} />
+            <Route path="/setup" component={Setup} />
+            <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/menu_management" component={MenuManagement} />
+            <Route path="/menu_employee" component={MenuEmployee} />
+            <Route path="/menu_admin" component={MenuAdmin} />
+            <Route path="/messages" component={Messages} />
+            <Route path="/transactionlog" component={TransactionLog} />
+            <Route path="/tools" component={Tools} />
+            <Route path="/" component={Home} />
         </Switch>
         <Footer></Footer>
       </div>
