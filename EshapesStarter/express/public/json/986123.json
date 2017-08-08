@@ -1,0 +1,19 @@
+{
+   "EmplID":986124,
+   "eShapeEnabled":true,
+   "eShapeManager":false,
+   "eShapeAdmin":false,
+   "EmpComment":"No Doubles",
+   "wsp1":"E",
+   "wsp2":"F",
+   "wsp3":"L",
+   "Email":{
+      "EmailEnabled":true,
+      "EmailAddress":"emailer@gmail.com"
+   },
+   "Cell":{
+      "CellEnabled":true,
+      "CellNumber":"9731234567",
+      "CellCarrier":1
+   }
+}

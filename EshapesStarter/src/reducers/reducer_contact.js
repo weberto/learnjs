@@ -1,8 +1,8 @@
-import { LIST_CONTACTS } from '../actions';
+import { FETCH_CONTACT } from '../actions';
 
 export default function(state = {}, action) {
   switch (action.type) {
-    case LIST_CONTACTS:
+    case FETCH_CONTACT:
       console.log(action.payload);
       return action.payload;
       /**

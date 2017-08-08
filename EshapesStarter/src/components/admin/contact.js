@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchContents } from '../actions';
+import { fetchContact } from '../actions';
+// import { fetchContents } from '../actions';
 
 // export default class Footer extends Component {
 class Footer extends Component {
@@ -14,6 +15,7 @@ class Footer extends Component {
         <p className="">
           {JSON.stringify(this.props.payload)}
         </p>
+        <p>Second</p>
       </div>
     );
   }
@@ -25,4 +27,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, {fetchContents})(Footer);
+export default connect(mapStateToProps, {fetchContact})(Footer);

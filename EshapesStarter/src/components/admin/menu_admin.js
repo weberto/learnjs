@@ -17,7 +17,8 @@ export default class MenuAdmin extends Component {
             <MenuCommon></MenuCommon>
             <li className="list-group-item"><Link to="/transactionlog" className="btn">Transaction Log</Link></li>
             <li className="list-group-item"><Link to="/tools" className="btn">Tools</Link></li>
-            <li className="list-group-item"><Link to="/contacts" className="btn">JSON Contact Test</Link></li>
+            <li className="list-group-item"><Link to="/contact" className="btn">Single Contact</Link></li>
+            <li className="list-group-item"><Link to="/listcontacts" className="btn">List Contacts</Link></li>
           </ul>
         </div>
       </ReactCSSTransitionGroup>

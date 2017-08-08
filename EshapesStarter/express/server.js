@@ -3,10 +3,12 @@ var app = express();
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 
 app.use(cors());
 app.use(express.static('public'));
+app.use(bodyParser.json()); // for parsing application/json
 
 var server = app.listen(8081, function () {
    // var host = server.address().address
@@ -16,13 +18,24 @@ var server = app.listen(8081, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })
 
+app.use(function(req, res, next) {
+  console.log(req);
+  // console.log(JSON.stringify(req.headers, null, 4));
+  next();
+})
 
-app.post('/process_post', urlencodedParser, function (req, res) {
+
+// app.post('/saveSetup', urlencodedParser, function (req, res) {
+app.post('/saveSetup', function (req, res) {
    // Prepare output in JSON format
+   console.log(`EXPRESS REQUEST: ${JSON.stringify(req.body)}`);
+   /**
    response = {
-      first_name:req.body.first_name,
-      last_name:req.body.last_name
+      firstName:req.body.firstName,
+      lastName:req.body.lastName
    };
+   */
+   response = req.body;
    console.log(response);
    res.end(JSON.stringify(response));
 })

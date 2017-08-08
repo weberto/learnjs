@@ -36,7 +36,14 @@ class Setup extends Component {
       <Link style={{"marginBottom": "30px"}} to="/home" className="btn"><span className="btn btn-primary">Submit</span></Link>
     );
     */
-    saveSetup(values);
+    console.log(`save setup: ${JSON.stringify(values)}`);
+    // the following line automatically routes to url
+    // this.props.history.push('/home');
+    // this.props.saveSetup(values);
+    // go to another route after return from ajax call
+    this.props.saveSetup(values, () => {
+      this.props.history.push('/home');
+    })
   }
   renderSome(field) {
     const { meta: { touched, error } } = field;
@@ -107,7 +114,7 @@ class Setup extends Component {
         <div className="form-group">
           <label>Shift Preference</label>
           <div>
-            <Field name="favoriteColor" component="select">
+            <Field name="shift-preference" component="select">
               <option />
               <option value="Early">Early</option>
               <option value="Middle">Middle</option>
@@ -152,11 +159,6 @@ class Setup extends Component {
 } // end of render
 }
 
-function mapStateToProps(state) {
-  return { eshapes: state.eshapes}
-}
-
-
 function asyncValidate(values) {
   return new Promise(function(resolve, reject) {
     resolve();
@@ -172,7 +174,6 @@ export default reduxForm({
   form: 'SetupForm'
 })(
   connect(null, { saveSetup })(Setup)
-//  connect(mapStateToProps, { saveSetup })(Setup)
 );
 
 

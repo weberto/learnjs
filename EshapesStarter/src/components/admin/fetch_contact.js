@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchContacts } from '../../actions';
+import { fetchContact } from '../../actions';
 import _ from 'lodash';
       // <li className="list-group-item">{contacts.Email.EmailAddress}</li>
 //       <li className="list-group-item">{contacts.EmplId}</li>
   //     <li className="list-group-item">{contacts.EmpComment}</li>
 
-class FetchContacts extends Component {
+class FetchContact extends Component {
   componentDidMount() {
-    this.props.fetchContacts();
+    const { id } = this.props.match.params;
+    console.log(`component did mount: ${id}`);
+    this.props.fetchContact(id);
   }
-  renderContacts() {
-    if (this.props.contacts.Cell) {
+  renderContact() {
+    if (this.props.contact.Cell) {
       let count = 111;
-      let t = this.props.contacts;
+      let t = this.props.contact;
       let x = [
         {"key": "Cell Number", "value": t.Cell.CellNumber},
         {"key": "Email Address", "value": t.Email.EmailAddress},
@@ -33,27 +35,13 @@ class FetchContacts extends Component {
     }
   }
 
-  renderContacts2() {
-    if (this.props.contacts.Cell)
-      return (
-        <div>
-          <li className="list-group-item" key={this.props.contacts.Cell.CellNumber}>{this.props.contacts.Cell.CellNumber}</li>
-          <li className="list-group-item" key={this.props.contacts.Email.EmailAddress}>{this.props.contacts.Cell.CellNumber}</li>
-          <li className="list-group-item" key={this.props.contacts.EmplId}>{this.props.contacts.Cell.CellNumber}</li>
-        </div>
-      )
-    else
-      return (
-        <li className="list-group-item">Test123</li>
-      )
-  }
   render() {
-    console.log(this.props.contacts);
+    console.log(this.props.contact);
     return (
       <div>
-        <h3>JSON Fetch Contacts</h3>
+        <h3>JSON Fetch Contact</h3>
         <ul className="list-group">
-          {this.renderContacts()}
+          {this.renderContact()}
         </ul>
       </div>
     )
@@ -61,9 +49,9 @@ class FetchContacts extends Component {
 }
 
 function mapStateToProps(state) {
-  return { contacts: state.contacts }
+  return { contact: state.contact }
 }
 
 
-export default connect(mapStateToProps, {fetchContacts})(FetchContacts);
+export default connect(mapStateToProps, {fetchContact})(FetchContact);
 // export default connect()(FetchContacts);
