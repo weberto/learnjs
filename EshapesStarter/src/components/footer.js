@@ -4,15 +4,16 @@ import { setEshapes } from '../actions';
 
 // export default class Footer extends Component {
 class Footer extends Component {
-  componentDidMount() {
+  componentWillMount() {
+  // componentDidMount() {
     this.props.setEshapes();
   }
   render() {
-    console.log(`Eshapse: ${JSON.stringify(this.props.eshapes)}`);
+    console.log(`Eshapes: ${JSON.stringify(this.props.eshapes)}`);
     return (
       <div className="container" style={{position: "fixed", bottom: 0, background: "#eeffee"}}>
         <p className="">
-          FOOTER: EShapes - authority_level: <strong><em>{this.props.eshapes.authority_level}</em></strong>. login
+          FOOTER: Hello EShapes user: {this.props.eshapes.username}. Your authority_level: <strong><em>{this.props.eshapes.authority_level}</em></strong>. login
           status: <strong><em>{JSON.stringify(this.props.eshapes.login)}</em></strong>
         </p>
       </div>

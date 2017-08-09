@@ -8,10 +8,13 @@ export default class Menu extends Component {
   render() {
     return (
       <div style={{marginTop: "10px", textAlign: "center", borderBottom: "1px solid black"}}>
+        <Link to="/menu"><span style={{"marginRight": "10px", "display": "inline"}} className="glyphicon glyphicon-menu-hamburger"></span></Link>
 
+        {/*
         <Link to="/menu_management"><span style={{"marginRight": "10px", "display": "inline"}} className="glyphicon glyphicon-menu-hamburger"></span></Link>
         <Link to="/menu_employee"><span style={{"marginRight": "10px", "display": "inline"}} className="glyphicon glyphicon-user"></span></Link>
         <Link to="/menu_admin"><span style={{"marginRight": "10px", "display": "inline"}} className="glyphicon glyphicon-font"></span></Link>
+        */}
         {/**
         <Link to="/menus"><span style={{"marginRight": "10px"}} className="glyphicon glyphicon-menu-hamburger" onClick={this.handleClick}></span></Link>
         */}

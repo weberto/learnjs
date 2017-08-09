@@ -15,17 +15,18 @@ import Setup from './components/common/setup';
 import Home from './components/common/home';
 import Login from './components/common/login';
 import Logout from './components/common/logout';
+import Menu from './components/common/menu';
 
-import MenuManagement from './components/mailroom_management/menu_management';
+// import MenuManagement from './components/mailroom_management/menu_management';
 import Scheduler from './components/mailroom_management/scheduler';
 import ActivityLog from './components/mailroom_management/activitylog';
 import AnnouncementEdit from './components/mailroom_management/announcementedit';
 
-import MenuEmployee from './components/employee/menu_employee';
+// import MenuEmployee from './components/employee/menu_employee';
 import Availability from './components/employee/availability';
 import Schedule from './components/employee/schedule';
 
-import MenuAdmin from './components/admin/menu_admin';
+// import MenuAdmin from './components/admin/menu_admin';
 import TransactionLog from './components/admin/transactionlog';
 import Tools from './components/admin/tools';
 
@@ -72,6 +73,9 @@ class Settings extends React.Component {
 */
 
           // <CSSTransitionGroup transitionName="fade" transitionEnterTimeout={300} transitionLeaveTimeout={300} >
+            // <Route path="/menu_management" component={MenuManagement} />
+            // <Route path="/menu_employee" component={MenuEmployee} />
+            // <Route path="/menu_admin" component={MenuAdmin} />
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
@@ -89,9 +93,10 @@ ReactDOM.render(
             <Route path="/setup" component={Setup} />
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
-            <Route path="/menu_management" component={MenuManagement} />
-            <Route path="/menu_employee" component={MenuEmployee} />
-            <Route path="/menu_admin" component={MenuAdmin} />
+            <Route path="/menu" component={Menu} />
+            <Route path="/menu_management" component={Menu} />
+            <Route path="/menu_employee" component={Menu} />
+            <Route path="/menu_admin" component={Menu} />
             <Route path="/messages" component={Messages} />
             <Route path="/transactionlog" component={TransactionLog} />
             <Route path="/tools" component={Tools} />

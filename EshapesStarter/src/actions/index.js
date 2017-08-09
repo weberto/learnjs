@@ -3,9 +3,10 @@ export const LIST_CONTACTS = 'list_contacts';
 export const FETCH_CONTACT = 'fetch_contact';
 export const SET_ESHAPES = 'set_eshapes';
 export const SAVE_SETUP = 'save_setup';
+export const PROCESS_LOGIN = 'process_login';
 
 
-const EXPRESS_ROOT = "http://10.54.59.57:8081/";
+const EXPRESS_ROOT = "http://10.51.234.243:8081/";
 
 export function listContacts(values) {
   // const request = axios.get(`10.54.59.57:8081/json/contact.json`);
@@ -74,11 +75,31 @@ export function fetchContact(id) {
 }
 
 
-export function setEshapes() {
+export function processLogin(values, callback) {
+  console.log(`action process login: ${JSON.stringify(values)}`);
   const eshapes = {
-    "authority_level": "employee",
+    "authority_level": values.authority_level,
+    "username": values.username,
     "login": true
   }
+  console.log(`Eshapes after login: ${JSON.stringify(eshapes)}`);
+  callback();
+  return {
+    type: PROCESS_LOGIN,
+    payload: eshapes
+  }
+}
+
+
+
+export function setEshapes(values) {
+  console.log(`action set eshapes: ${JSON.stringify(values)}`);
+  let eshapes = {
+    "authority_level": values ? values.authority_level : "management",
+    "username": values ? values.username : 'not logged in',
+    "login": values ? true : false
+  }
+  console.log(`Eshapes after login: ${JSON.stringify(eshapes)}`);
 
   return {
     type: SET_ESHAPES,

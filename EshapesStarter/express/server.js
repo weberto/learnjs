@@ -12,7 +12,8 @@ app.use(bodyParser.json()); // for parsing application/json
 
 var server = app.listen(8081, function () {
    // var host = server.address().address
-   var host = '10.54.59.57';
+   var host = process.env.HOST;
+   // var host = '10.54.59.57';
    var port = server.address().port
 
    console.log("Example app listening at http://%s:%s", host, port)
