@@ -92,7 +92,7 @@ export function processLogin(values, callback) {
 
 
 
-export function setEshapes(values) {
+export function setEshapes(values, callback) {
   console.log(`action set eshapes: ${JSON.stringify(values)}`);
   let eshapes = {
     "authority_level": values ? values.authority_level : "management",
@@ -100,7 +100,8 @@ export function setEshapes(values) {
     "login": values ? true : false
   }
   console.log(`Eshapes after login: ${JSON.stringify(eshapes)}`);
-
+  if (callback)
+    callback();
   return {
     type: SET_ESHAPES,
     payload: eshapes
