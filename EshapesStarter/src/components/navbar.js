@@ -5,9 +5,10 @@ export default class Menu extends Component {
   handleClick() {
     alert('test');
   }
+      // <div style={{marginTop: "10px", textAlign: "center", borderBottom: "1px solid black"}}>
   render() {
     return (
-      <div style={{marginTop: "10px", textAlign: "center", borderBottom: "1px solid black"}}>
+      <div style={{marginTop: "10px", marginBottom: "10px", textAlign: "center", background: "white"}}>
         <Link to="/menu"><span style={{"marginRight": "10px", "display": "inline"}} className="glyphicon glyphicon-menu-hamburger"></span></Link>
 
         {/*

@@ -37,7 +37,7 @@ class Login extends Component {
     return (
       <div className="col-md-offset-4 col-md-4">
         <div className="jumbotron row">
-          <h3 className="text-center">Login</h3>
+          <h3 className="text-center">Eshapes Login</h3>
         </div>
 
         <div className="well row">
