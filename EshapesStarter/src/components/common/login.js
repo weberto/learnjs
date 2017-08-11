@@ -37,7 +37,7 @@ class Login extends Component {
     return (
       <div className="col-md-offset-4 col-md-4">
         <div className="jumbotron row">
-          <h3 className="text-center">Eshapes Login</h3>
+          <h3 className="text-center">Eshapes Sign In</h3>
         </div>
 
         <div className="well row">
@@ -45,11 +45,11 @@ class Login extends Component {
             <div>
               <Field
                 name="username"
-                label="User Name"
+                label="NYT Username"
                 component={this.renderSome}
                 type="text"
                 className="form-control"
-                placeholder="User Name"
+                placeholder="AD Username (EIN)"
               />
               {touched ? error : ''}
             </div>
@@ -57,11 +57,11 @@ class Login extends Component {
             <div>
               <Field
                 name="password"
-                label="PasswordName"
+                label="NYT Password"
                 component={this.renderSome}
                 type="password"
                 className="form-control"
-                placeholder="Password"
+                placeholder="AD Password"
               />
               {touched ? error : ''}
             </div>

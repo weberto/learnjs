@@ -8,9 +8,9 @@ class MenuCommon extends Component {
     let login = null;
     let logout = null;
     if (! this.props.eshapes.login)
-          login = <li className="list-group-item"><Link to="/login" className="btn">Login</Link></li>
-    if (this.props.eshapes.login)
-        logout = <li className="list-group-item"><Link to="/logout" className="btn">Logout</Link></li>
+      login = <li className="list-group-item"><Link to="/login" className="btn">Login</Link></li>
+    else
+      logout = <li className="list-group-item"><Link to="/logout" className="btn">Logout</Link></li>
 
     return (
       <div>

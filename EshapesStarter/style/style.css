@@ -7,10 +7,14 @@ body {
 h3 {
   background: white;
   color: black;
-  width: 75%;
-  margin-left: 12.5%;
+  width: 80%;
+  margin-left: 10%;
   padding: 5px;
   border-radius: 5px;
+}
+
+.btn-primary {
+  background: rgb(106,204,203);
 }
 
 .glyphyicon {

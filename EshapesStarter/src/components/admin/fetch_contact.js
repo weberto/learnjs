@@ -39,7 +39,7 @@ class FetchContact extends Component {
     console.log(this.props.contact);
     return (
       <div>
-        <h3>JSON Fetch Contact</h3>
+        <h3>Contacts</h3>
         <ul className="list-group">
           {this.renderContact()}
         </ul>
