@@ -23,6 +23,7 @@ class Login extends Component {
         <input
           className="form-control"
           type={field.type}
+          placeholder={field.placeholder}
           {...field.input}
         />
         <div className="text-danger">
@@ -37,7 +38,7 @@ class Login extends Component {
     return (
       <div className="col-md-offset-4 col-md-4">
         <div className="jumbotron row">
-          <h3 className="text-center">Eshapes Sign In</h3>
+          <h3 className="text-center">Login</h3>
         </div>
 
         <div className="well row">

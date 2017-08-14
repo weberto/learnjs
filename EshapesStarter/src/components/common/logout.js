@@ -24,7 +24,7 @@ class Logout extends Component {
     return (
       <div className="col-md-offset-4 col-md-4">
         <h3>Thank You</h3>
-        <Link to="/login" className="btn btn-primary">Login</Link>
+        <Link to="/login" className="btn btn-success">Login</Link>
       </div>
     );
   }

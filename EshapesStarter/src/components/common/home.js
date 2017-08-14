@@ -14,8 +14,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h3 className="text-center">Management Message</h3>
-        {/** <h3 className="text-center" style={{"color" : "white"}}>Management Message</h3> */}
+        <h3 className="text-center" >Management Message</h3>
         <div className="well">
          <h4 className="text-right">{this.state.today}</h4>
          <p className="text-justify">
@@ -27,7 +26,7 @@ The Mailroom Call Center, in which Employees can indicate their availability and
 
         </div>
         <div className="well">
-          <h4 className="text-center">Shift Availability as of {this.state.now}</h4>
+          <h4 className="text-center">Shift Availability {this.state.now}</h4>
           <ul className="list-group">
             <li className="list-group-item">
               <span className="badge">14</span>

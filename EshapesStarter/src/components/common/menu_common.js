@@ -8,9 +8,19 @@ class MenuCommon extends Component {
     let login = null;
     let logout = null;
     if (! this.props.eshapes.login)
-      login = <li className="list-group-item"><Link to="/login" className="btn">Login</Link></li>
+      login = <li className="list-group-item">
+                <Link to="/login" className="btn">
+                  <i className="fa fa-user" aria-hidden="true"></i>
+                  Login
+                </Link>
+              </li>
     else
-      logout = <li className="list-group-item"><Link to="/logout" className="btn">Logout</Link></li>
+      logout = <li className="list-group-item">
+                  <Link to="/logout" className="btn">
+                    <i className="fa fa-user" aria-hidden="true"></i>
+                    Logout
+                  </Link>
+                </li>
 
     return (
       <div>
@@ -20,7 +30,12 @@ class MenuCommon extends Component {
         */}
         {login}
         {logout}
-        <li className="list-group-item"><Link to="/home" className="btn">Home</Link></li>
+        <li className="list-group-item">
+          <Link to="/home" className="btn">
+            <i className="fa fa-home" aria-hidden="true"></i>
+            <span>Home</span>
+          </Link>
+        </li>
         {/* <li className="list-group-item"><Link to="/setup" className="btn">Setup</Link></li>
         */}
         {/*

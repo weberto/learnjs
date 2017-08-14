@@ -8,7 +8,9 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host=$HOST",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +26,8 @@
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^0.14.7",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.14.0",
+    "@storybook/react": "^3.2.4"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -37,6 +40,7 @@
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-test-utils": "^15.6.0",
+    "react-datepicker": "^0.53.0",
     "react-dom": "^15.6.1",
     "react-menus": "^2.0.8",
     "react-redux": "^5.0.5",

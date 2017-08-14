@@ -2,6 +2,26 @@ body {
   background-color: #ccccec;
   background-color: #000080;
   background-color: rgb(19,19,70);
+  /** peach */
+  background-image: linear-gradient(90deg, #fc6e51, #f6bb42);
+  /** sea */
+  background-image: linear-gradient(90deg, #48cfad, #3bafda);
+  /** https://webedx-spark.github.io/coursera-ui/?selectedKind=basic.GradientWrapper&selectedStory=simple%20usage&full=0&down=0&left=1&panelRight=1&downPanel=tuchk4%2Freadme%2Fpanel */
+  /** blueberry */
+  background-image: linear-gradient(90deg, #5d9cec, #967adc);
+  /** midnight combo */
+  background-image: linear-gradient(90deg, #000080, #5d9cec);
+
+  background-image: linear-gradient(90deg, #48cfad, #3bafda);
+}
+
+.logo {
+  color: #48cfad;
+  color: white;
+  background-image: linear-gradient(90deg, #5d9cec, #967adc);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 h3 {
@@ -13,11 +33,21 @@ h3 {
   border-radius: 5px;
 }
 
+.well, .jumbotron {
+  background-image: linear-gradient(90deg, #fc6e51, #f6bb42);
+  background-image: linear-gradient(90deg, #5d9cec, #967adc);
+  background-image: linear-gradient(90deg, #cccccc, #eeeeee);
+}
+
+.well {
+  margin-bottom: 50px;
+}
+
 .btn-primary {
   background: rgb(106,204,203);
 }
 
-.glyphyicon {
+.glyphyicon, .fa {
   margin: 0 10px 0 10px;
 }
 

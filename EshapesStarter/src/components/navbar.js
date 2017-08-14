@@ -18,8 +18,9 @@ class Menu extends Component {
     if (this.props.eshapes.login)
       setup = <Link to="/setup" className="btn"><span className="glyphicon glyphicon-cog"></span></Link>
 
+      // <div style={{marginTop: "10px", marginBottom: "10px", textAlign: "center", background: "white"}}>
     return (
-      <div style={{marginTop: "10px", marginBottom: "10px", textAlign: "center", background: "white"}}>
+      <div style={{marginLeft: "-20px", width: "110%", padding: "10px", marginTop: "1px", marginBottom: "1px", textAlign: "center", background: "white"}}>
         <Link to="/menu"><span style={{"marginRight": "10px", "display": "inline"}} className="glyphicon glyphicon-menu-hamburger"></span></Link>
 
         {/*
@@ -31,6 +32,7 @@ class Menu extends Component {
         <Link to="/menus"><span style={{"marginRight": "10px"}} className="glyphicon glyphicon-menu-hamburger" onClick={this.handleClick}></span></Link>
         */}
         <img style={{"margin": "0 30px 0 30px"}} id="NYTLogo" alt="New York Times" src="https://static01.nyt.com/images/misc/nytlogo152x23.gif" height="23" width="152" />
+        <span className="logo">e-shape</span>
         {setup}
         {/* <Link to="/setup" className="btn"><span className="glyphicon glyphicon-cog"></span></Link> */}
         {/**

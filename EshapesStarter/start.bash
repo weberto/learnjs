@@ -7,6 +7,6 @@ cat ./src/actions/index.js | perl -lne 's/const EXPRESS_ROOT =.*$/const EXPRESS_
 cp ./src/actions/index.js.tmp ./src/actions/index.js
 
 npm start &
-
+sleep 15
 (cd express && nodemon server) &
 

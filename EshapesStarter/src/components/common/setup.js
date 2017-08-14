@@ -55,6 +55,7 @@ class Setup extends Component {
         <input
           className="form-control"
           type="text"
+          placeholder={field.placeholder}
           {...field.input}
         />
         <div className="text-danger">
