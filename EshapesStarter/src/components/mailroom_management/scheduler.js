@@ -20,7 +20,7 @@ class Scheduler extends Component {
 
   render() {
     return (
-      <div className="jumbotronx">
+      <div className="jumbotron">
         <h3 className="text-center">Scheduler</h3>
          <DatePicker selected={this.state.date} onChange={this.handleChange} />
       </div>

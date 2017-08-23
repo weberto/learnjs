@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Staff List",
+    "id": 0,
+    "cards": [
+      { "id": 0, "prompt": "Jose", "data": "", "answer": "AR" },
+      { "id": 1, "prompt": "Pei", "data": "", "answer": "CA" },
+      { "id": 2, "prompt": "Susan", "data": "", "answer": "HI" },
+      { "id": 3, "prompt": "Natasha", "data": "", "answer": "KS" },
+      { "id": 4, "prompt": "Bindu", "data": "", "answer": "MD" },
+      { "id": 5, "prompt": "Mae", "data": "", "answer": "MI" },
+      { "id": 6, "prompt": "Eliana", "data": "", "answer": "NY" }
+    ]
+  },
+  {
+    "title": "Shift Openings",
+    "id": 1,
+    "cards": [
+      { "id": 0, "prompt": "11/23/17", "data": "12", "answer": "statement" },
+      { "id": 0, "prompt": "11/24/17", "data":"17", "answer": "statement" },
+      { "id": 0, "prompt": "11/26/17", "data":"12", "answer": "statement" },
+      { "id": 0, "prompt": "11/27/17", "data":"12", "answer": "statement" },
+      { "id": 0, "prompt": "11/29/17", "data":"12", "answer": "statement" }
+    ]
+  }
+]
